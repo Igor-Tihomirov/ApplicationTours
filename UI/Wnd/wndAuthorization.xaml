@@ -1,0 +1,134 @@
+﻿<Window x:Class="Приложение_Турагенства.UI.Wnd.wndAuthorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Приложение_Турагенства.UI.Wnd"
+        mc:Ignorable="d"
+        Title="Путешествия по России: Вход" 
+        Height="500" Width="400" 
+        ResizeMode="CanMinimize" 
+        WindowStartupLocation="CenterScreen" 
+        Background="#bae3e8" 
+        Icon="/Приложение_Турагенства;component/Resource/Logo.png" >
+    <Grid x:Name="grdMainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="stcTitle" 
+                    Orientation="Vertical" 
+                    Grid.Row="0">
+            <Image x:Name="imgImageTitle" 
+                    HorizontalAlignment="Center" 
+                    Width="100" Height="100" 
+                    Margin="0,20,0,0" 
+                   Source="../../Resource/Logo.png"/>
+            <Label x:Name="lblTitle" 
+                   Content="Вход в систему" 
+                   HorizontalAlignment="Center" 
+                   Margin="0, 5, 0, 0" 
+                   Style="{StaticResource LabelTitle}"/>
+        </StackPanel>
+        <Grid x:Name="grdUserInformation" 
+              Grid.Row="1"
+              Margin="0,15,0,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblLogin" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   Content="Логин" 
+                   Margin="25,10,0,10" 
+                   Style="{StaticResource LabelBasic}"/>
+            <TextBox x:Name="txtbxLogin" 
+                     Grid.Row="0" 
+                     Grid.Column="1" 
+                     Margin="10,15,25,15"
+                     Style="{StaticResource txtbLoginWatermark}"                     
+                     TextChanged="TextBox_TextChanged" 
+                     GotFocus="Watermark_GotFocus" 
+                     LostFocus="Watermark_LostFocus"/>
+            <Label x:Name="lblPassword" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   Content="Пароль" 
+                   Margin="25,10,0,10" 
+                   Style="{StaticResource LabelBasic}"/>
+            <PasswordBox x:Name="psbPassword" 
+                   Grid.Row="1" 
+                         Grid.Column="1"
+                         Margin="10,15,25,15" 
+                         Style="{StaticResource psbWatermarkIsNotEnabled}" 
+                         Visibility="Visible"
+                         IsEnabled="False"
+                         PasswordChanged="psbPassword_PasswordChanged" 
+                         GotFocus="Watermark_GotFocus" 
+                         LostFocus="Watermark_LostFocus"/>
+            <TextBox x:Name="txtbxPassword" 
+                     Grid.Row="1" 
+                     Grid.Column="1" 
+                     Margin="10,15,25,15" 
+                     Style="{StaticResource txtbPassWatermarkIsNotEnabled}" 
+                     Visibility="Hidden" 
+                     IsEnabled="False"
+                     TextChanged="TextBox_TextChanged" 
+                     GotFocus="Watermark_GotFocus" 
+                     LostFocus="Watermark_LostFocus"/>
+            <StackPanel x:Name="stckpPassVisibility"
+                    Orientation="Horizontal"
+                    Grid.Row="2" 
+                    Grid.Column="1"
+                    HorizontalAlignment="Right" 
+                    Margin="0,0,25,0">
+                <CheckBox x:Name="chbPasswordVisibility"                       
+                      Style="{StaticResource CheckBoxByDefault}" 
+                      Click="chbPasswordVisibility_Click" />
+                <Label x:Name="lblTitlePassVisibility" 
+                       Content="Показать пароль"
+                       FontSize="14"
+                       FontFamily="Comic Sans MS"
+                       Width="125"
+                       HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <Label x:Name="lblTimeForEndBlock"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   Margin="25,0,25,0"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid x:Name="grdButtons" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnRegistration" 
+                    Grid.Column="0" 
+                    Content="Зарегистрироваться"                     
+                    Margin="25,0,45,40"
+                    Style="{StaticResource ButtonBasicNoSize}"
+                    MouseLeave="Button_MouseLeave" 
+                    MouseEnter="Button_MouseEnter" />
+            <Button x:Name="btnAuthorization" 
+                    Grid.Column="1" 
+                    Content="Войти"                                         
+                    Margin="45, 0, 25, 40"                   
+                    IsEnabled="False"
+                    Style="{StaticResource ButtonNoSizeIsNotEnabled}"
+                    Click="btnAuthorization_Click" 
+                    MouseEnter="Button_MouseEnter" 
+                    MouseLeave="Button_MouseLeave"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,255 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ToolTip">
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+    </Style>
+
+    <Style x:Key="TextBlockNormal" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="25 0 0 0"/>
+    </Style>
+
+    <Style TargetType="DataGridTextColumn">
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+    </Style>
+
+    <Style x:Key="LabalSmall" TargetType="Label">
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <!--Стиль для TextBox-->
+    <Style x:Key="TextBoxBasic" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFD6F7FB"/>
+            <Setter Property="BorderBrush" Value="#445c93"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MaxLength" Value="25"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Watermark для TextBox Login-->
+    <Style x:Key="txtbLoginWatermark" TargetType="TextBox" BasedOn="{StaticResource TextBoxBasic}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <TextBlock Text="Введите логин"
+                                       VerticalAlignment="Center"
+                                       Margin="3,0,0,0"
+                                       Foreground="#445c93"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Watermark для TextBox Password-->
+    <Style x:Key="txtbPasswordWatermark" TargetType="TextBox" BasedOn="{StaticResource TextBoxBasic}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <TextBlock Text="Введите пароль"
+                                       VerticalAlignment="Center"
+                                       Margin="3,0,0,0"
+                                       Foreground="#445c93"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Стиль для недоступного поля пароля TextBox-->
+    <Style x:Key="txtbPassWatermarkIsNotEnabled" TargetType="TextBox" BasedOn="{StaticResource txtbPasswordWatermark}">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFC5DBDE"/>
+            <Setter Property="BorderBrush" Value="#FF55678F"/>
+        </Style.Setters>
+    </Style>
+    <!--Стиль для PasswordBox-->
+    <Style x:Key="PasswordBoxBasic" TargetType="PasswordBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFD6F7FB"/>
+            <Setter Property="BorderBrush" Value="#445c93"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MaxLength" Value="25"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Watermark для PasswordBox-->
+    <Style x:Key="psbWatermark" TargetType="PasswordBox" BasedOn="{StaticResource PasswordBoxBasic}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <TextBlock Text="Введите пароль"
+                                       VerticalAlignment="Center"
+                                       Margin="3,0,0,0"
+                                       Foreground="#445c93"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Стиль для недоступного поля пароля PasswordBox-->
+        <Style x:Key="psbWatermarkIsNotEnabled" TargetType="PasswordBox" BasedOn="{StaticResource psbWatermark}">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFC5DBDE"/>
+            <Setter Property="BorderBrush" Value="#FF55678F"/>
+        </Style.Setters>
+    </Style>
+    
+    <!--Стиль для надписей Label-->
+    <Style x:Key="LabelBasic" TargetType="Label">
+        <Style.Setters>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style.Setters>
+    </Style>
+    <!--Стиль для заголовков Label-->
+    <Style x:Key="LabelTitle" TargetType="Label" BasedOn="{StaticResource LabelBasic}">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="28"/>
+        </Style.Setters>
+    </Style>
+    <!--Стиль для CheckBox-->
+    <Style x:Key="CheckBoxBasic" TargetType="CheckBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#fac716"/>
+            <Setter Property="BorderBrush" Value="#FFFFC600"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style.Setters>
+    </Style>
+    
+    <!--Основной стиль для кнопки-->
+    <Style x:Key="ButtonBasicNoSize" TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="#fac716"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="10">
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Стиль кнопки при наведении-->
+    <Style x:Key="ButtonNoSizeIsMouseMove" TargetType="Button" BasedOn="{StaticResource ButtonBasicNoSize}">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FF7600"/>
+        </Style.Setters>
+    </Style>
+    <!--Стиль кнопки при недоступности-->
+    <Style x:Key="ButtonNoSizeIsNotEnabled" TargetType="Button" BasedOn="{StaticResource ButtonBasicNoSize}">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFFBDF7C"/>
+        </Style.Setters>
+    </Style>
+
+    
+    
+    <Style x:Key="btnBasic" TargetType="Button" BasedOn="{StaticResource ButtonBasicNoSize}">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Width" Value="175"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+
+    <Style x:Key="btnIsMouseMove" TargetType="Button" BasedOn="{StaticResource btnBasic}">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FF7600"/>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="btnIsNotEnabled" TargetType="Button" BasedOn="{StaticResource btnBasic}">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFFBDF7C"/>
+        </Style.Setters>
+    </Style>
+
+    <!--Стиль для активации видимости пароля CheckBox-->
+    <!--Выделенный CheckBox-->
+    <Style x:Key="CheckBoxByDefault" TargetType="CheckBox">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Image Source="../Resource/ClosedEye.png"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <!--Невыделенный CheckBox-->
+    <Style x:Key="CheckBoxIsChecked" TargetType="CheckBox">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Image Source="../Resource/OpenedEye.png"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

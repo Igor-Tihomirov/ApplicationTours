@@ -1,0 +1,65 @@
+﻿<Page x:Class="Приложение_Турагенства.UI.Pg.pgTours"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Приложение_Турагенства.UI.Pg"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1100"
+      Title="pgTours">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 10" >
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <TextBlock Text="Введите название для поиска:  " Width="175" TextAlignment="Right" Margin="5 0 10 0"/>
+                <TextBox Name="txtbxSearch" Width="225" TextChanged="txtbxSearch_TextChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <TextBlock Text="Выберите тип:  " Width="175" TextAlignment="Right" Margin="5 0 10 0"/>
+                <ComboBox Name="ComboType" Width="225" SelectionChanged="ComboType_SelectionChanged" DisplayMemberPath="Name"/>
+            </StackPanel>
+            <CheckBox x:Name="chbActual" Margin="15 10 5 10" Unchecked="chbActual_Checked" Content="Показывать только актуальные туры  " Checked="chbActual_Checked"/>
+            <Label x:Name="lblCountData" Width="300" Margin="5 5 10 0"/>
+        </WrapPanel>
+
+        <ListView Name="lvwTours" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" SelectionMode="Single" SelectionChanged="lvwTours_SelectionChanged" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="310"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Width="400" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="5">
+                            <Image.Source>
+                                <Binding Path="ImagePreview">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>../../Resource/Logo.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" TextAlignment="Center" Width="390"/>
+                        <TextBlock Text="{Binding Price, StringFormat={}{0:N2} РУБ}" Grid.Row="2" Margin="5 5 5 15" HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding TicketCount, StringFormat={}Билетов осталось:{0}}" Grid.Row="3" Margin="5 5 5 15" HorizontalAlignment="Right" FontSize="14"/>
+                        <TextBlock Text="{Binding ActualText}" Grid.Row="3" HorizontalAlignment="left" FontSize="14"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Name="btnOpenListHotels" Grid.Row="2" Content="Перейти к списку отелей" HorizontalAlignment="Left" Style="{StaticResource btnBasic}" Click="btnExit_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" />
+    </Grid>
+</Page>

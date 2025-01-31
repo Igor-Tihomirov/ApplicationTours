@@ -1,0 +1,48 @@
+﻿<Page x:Class="Приложение_Турагенства.UI.Pg.pgHotels"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Приложение_Турагенства.UI.Pg"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pgHotels" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 10" >
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <TextBlock Text="Введите название для поиска:  " Width="175" TextAlignment="Right" Margin="5 0 10 0"/>
+                <TextBox Name="txtbxSearch" Width="225" TextChanged="txtbxSearch_TextChanged" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <TextBlock Text="Выберите страну:  " Width="175" TextAlignment="Right" Margin="5 0 10 0"/>
+                <ComboBox Name="ComboCountry" Width="225"  DisplayMemberPath="Name" SelectionChanged="ComboCountry_SelectionChanged"/>
+            </StackPanel>
+        </WrapPanel>
+
+        <DataGrid x:Name="DGridHotels" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название отеля" Binding="{Binding Name}" Width="3*" MinWidth="100"/>
+                <DataGridTextColumn Header="Количество звезд" Binding="{Binding CountOfStars}" Width="120"/>
+                <DataGridTextColumn Header="Страна" Binding="{Binding Country.Name}" Width="*"/>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnEdit" Content="Редактировать" Style="{StaticResource btnBasic}" Click="btnEdit_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Loaded="btnEdit_Loaded"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Name="btnBackListTours" Grid.Row="2" Content="Вернуться к списку туров" HorizontalAlignment="Left" Style="{StaticResource btnBasic}" Click="btnExit_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" />
+        <Button Name="btnAdd" Grid.Row="2" Content="Добавить" HorizontalAlignment="Center" Style="{StaticResource btnBasic}" Click="btnAdd_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
+        <Button Name="btnDelete" Grid.Row="2" Content="Удалить" HorizontalAlignment="Right" Style="{StaticResource btnBasic}" Click="btnDelete_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
+    </Grid>
+</Page>
