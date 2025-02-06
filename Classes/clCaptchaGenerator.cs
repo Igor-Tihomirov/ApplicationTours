@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace CAPTCHA.Classes
+namespace Приложение_Турагенства.Classes
 {
     public class clCaptchaGenerator
     {

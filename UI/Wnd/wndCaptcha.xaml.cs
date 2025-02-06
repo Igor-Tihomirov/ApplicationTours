@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using CAPTCHA.Classes;
+using Приложение_Турагенства.Classes;
 
-namespace CAPTCHA
+namespace Приложение_Турагенства
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
