@@ -28,9 +28,9 @@
             
             <Grid Grid.Column="1" Width="230" HorizontalAlignment="Left">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Name="lblActivityUser" Grid.Row="0" Content="Активный пользователь:" Visibility="Hidden" Margin="5 0 0 0" Style="{StaticResource LabalSmall}" FontSize="14"/>
                 <Label Name="lblUserName" Grid.Row="1" Content="" Visibility="Hidden" Margin="5 0 0 0" Style="{StaticResource LabalSmall}"/>
