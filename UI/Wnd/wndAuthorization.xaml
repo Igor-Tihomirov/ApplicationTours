@@ -57,7 +57,7 @@
                      Style="{StaticResource txtbLoginWatermark}"                     
                      TextChanged="TextBox_TextChanged" 
                      GotFocus="Watermark_GotFocus" 
-                     LostFocus="Watermark_LostFocus"/>
+                     LostFocus="Watermark_LostFocus" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"/>
             <Label x:Name="lblPassword" 
                    Grid.Row="1" 
                    Grid.Column="0" 
@@ -73,7 +73,7 @@
                          IsEnabled="False"
                          PasswordChanged="psbPassword_PasswordChanged" 
                          GotFocus="Watermark_GotFocus" 
-                         LostFocus="Watermark_LostFocus"/>
+                         LostFocus="Watermark_LostFocus" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"/>
             <TextBox x:Name="txtbxPassword" 
                      Grid.Row="1" 
                      Grid.Column="1" 
@@ -83,7 +83,7 @@
                      IsEnabled="False"
                      TextChanged="TextBox_TextChanged" 
                      GotFocus="Watermark_GotFocus" 
-                     LostFocus="Watermark_LostFocus"/>
+                     LostFocus="Watermark_LostFocus" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"/>
             <StackPanel x:Name="stckpPassVisibility"
                     Orientation="Horizontal"
                     Grid.Row="2" 
@@ -119,7 +119,7 @@
                     Margin="25,0,45,40"
                     Style="{StaticResource ButtonBasicNoSize}"
                     MouseLeave="Button_MouseLeave" 
-                    MouseEnter="Button_MouseEnter" />
+                    MouseEnter="Button_MouseEnter" Click="btnRegistration_Click" />
             <Button x:Name="btnAuthorization" 
                     Grid.Column="1" 
                     Content="Войти"                                         

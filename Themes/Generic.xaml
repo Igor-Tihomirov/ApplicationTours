@@ -4,11 +4,12 @@
     xmlns:local="clr-namespace:CustomControls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="MainStyleDictionary.xaml"/>
+        <ResourceDictionary Source="../Style/MainStyleDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
-    <Style TargetType="local:clPlaceholderTextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Style TargetType="local:clPlaceholderTextBox" BasedOn="{StaticResource TextBoxBasic}">
+        <Setter Property="Padding" Value="5 0 0 0"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>

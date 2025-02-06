@@ -15,15 +15,15 @@ using System.Windows.Shapes;
 
 using Приложение_Турагенства.Classes;
 
-namespace Приложение_Турагенства
+namespace Приложение_Турагенства.UI.Wnd
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class wndCaptcha : Window
     {
         private clCaptchaGenerator generator = new clCaptchaGenerator();
-        public MainWindow()
+        public wndCaptcha()
         {
             InitializeComponent();
         }
@@ -36,9 +36,16 @@ namespace Приложение_Турагенства
         private void btnCheckCaptcha_Click(object sender, RoutedEventArgs e)
         {
             if (txbxCaptchaText.Text.ToLower() == generator.CaptchaText.ToLower())
+            {
                 MessageBox.Show("Верно!");
+                wndAuthorization authorization = new wndAuthorization();
+                authorization.Show();
+                this.Close();
+            }                
             else
+            {
                 MessageBox.Show("Ошибка!");
+            }                
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

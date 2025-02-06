@@ -93,6 +93,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Wnd\wndRegistration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UI\Wnd\wndTours.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -160,6 +164,9 @@
     </Compile>
     <Compile Include="UI\Wnd\wndAuthorization.xaml.cs">
       <DependentUpon>wndAuthorization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Wnd\wndRegistration.xaml.cs">
+      <DependentUpon>wndRegistration.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Wnd\wndTours.xaml.cs">
       <DependentUpon>wndTours.xaml</DependentUpon>

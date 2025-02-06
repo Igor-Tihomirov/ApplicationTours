@@ -57,7 +57,10 @@ namespace CustomControls
 
         private void OnMouseLeave(object sender, MouseEventArgs e)
         {
-            this.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#be8f23")); 
+            if(this.IsFocused == false)
+            {
+                this.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#445c93"));
+            }            
         }
 
         private void OnGotFocus(object sender, RoutedEventArgs e)
@@ -67,7 +70,7 @@ namespace CustomControls
 
         private void OnLostFocus(object sender, RoutedEventArgs e)
         {
-            (sender as TextBox).BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#be8f23"));
+            (sender as TextBox).BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#445c93"));
         }
     }
 }

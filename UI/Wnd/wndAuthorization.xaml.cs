@@ -116,6 +116,9 @@ namespace Приложение_Турагенства.UI.Wnd
                 };
 
                 MessageBox.Show("Попробуйте войти через 15 секунд", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                wndCaptcha captcha = new wndCaptcha();
+                captcha.Show();
+                this.Close();
             }
         }
 
@@ -236,13 +239,14 @@ namespace Приложение_Турагенства.UI.Wnd
                     control.Style = (Style)Application.Current.FindResource("PasswordBoxBasic");
                     break;
             }
+            control.BorderBrush = Brushes.Blue;
         }
 
         private void Watermark_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtbxLogin.Text == "")
             {
-                txtbxLogin.Style = (Style)Application.Current.FindResource("txtbLoginWatermark");                
+                txtbxLogin.Style = (Style)Application.Current.FindResource("txtbLoginWatermark");
             }
             else
             {
@@ -254,7 +258,33 @@ namespace Приложение_Турагенства.UI.Wnd
                 {
                     psbPassword.Style = (Style)Application.Current.FindResource("psbWatermark");
                 }
-            }            
+            }
+            Control control = (Control)sender;
+            control.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#445c93"));
         }
+
+        private void btnRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            wndRegistration registration = new wndRegistration();
+            registration.Show();
+            this.Close();
+        }
+
+
+
+        private void OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            Control control = (Control)sender;
+            control.BorderBrush = Brushes.Blue;
+        }
+
+        private void OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            Control control = (Control)sender;
+            if (control.IsFocused == false)
+            {
+                control.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#445c93"));
+            }
+        }        
     }
 }

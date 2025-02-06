@@ -13,9 +13,9 @@
         <Setter Property="Margin" Value="25 0 0 0"/>
     </Style>
 
-    <Style TargetType="DataGridTextColumn">
+    <!--<Style TargetType="DataGridTextColumn">
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
-    </Style>
+    </Style>-->
 
     <Style x:Key="LabalSmall" TargetType="Label">
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
@@ -57,7 +57,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="5">
-                            <TextBlock Text="Введите логин"
+                            <TextBlock Text="Введите логин..."
                                        VerticalAlignment="Center"
                                        Margin="3,0,0,0"
                                        Foreground="#445c93"/>
@@ -77,7 +77,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="5">
-                            <TextBlock Text="Введите пароль"
+                            <TextBlock Text="Введите пароль..."
                                        VerticalAlignment="Center"
                                        Margin="3,0,0,0"
                                        Foreground="#445c93"/>
@@ -129,7 +129,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="5">
-                            <TextBlock Text="Введите пароль"
+                            <TextBlock Text="Введите пароль..."
                                        VerticalAlignment="Center"
                                        Margin="3,0,0,0"
                                        Foreground="#445c93"/>
