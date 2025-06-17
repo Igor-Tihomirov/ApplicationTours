@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Приложение_Турагенства.UI.Wnd"
+        xmlns:cmcl="clr-namespace:CustomControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Путешествия по России: Провверка" Height="400" Width="600" Loaded="Window_Loaded"
+        ResizeMode="CanMinimize" 
+        WindowStartupLocation="CenterScreen" 
+        Background="#bae3e8" 
+        Icon="/Приложение_Турагенства;component/Resource/Logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -16,9 +21,30 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="imgCaptcha" Grid.Row="0" Grid.ColumnSpan="2" Width="300" Height="100"/>
-        <TextBox x:Name="txbxCaptchaText" Grid.Row="1" Grid.ColumnSpan="2" Width="250" Height="30"/>
-        <Button x:Name="btnCreateCaptcha" Grid.Row="2" Grid.Column="0" Width="130" Height="50" Content="Обновить картинку" Click="btnCreateCaptcha_Click"/>
-        <Button x:Name="btnCheckCaptcha" Grid.Row="2" Grid.Column="1" Width="130" Height="50" Content="Проерить CAPTHCA" Click="btnCheckCaptcha_Click"/>
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Width="300" Height="100">
+            <Image x:Name="imgCaptcha" Width="300" Height="100"/>
+        </Border>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Введите Captcha:"/>
+            <cmcl:clPlaceholderTextBox x:Name="txbxCaptchaText" Width="250" Height="30" Placeholder="Введите текст с изображения..." Radius="10" Margin="10 8 0 8" MaxLength="5" TextChanged="txbxCaptchaText_TextChanged"/>
+        </StackPanel>
+        <Button x:Name="btnCreateCaptcha" Grid.Row="2" Grid.Column="0" Width="130" Height="50" Content="Обновить картинку" Style="{StaticResource ButtonBasicNoSize}" Click="btnCreateCaptcha_Click" MouseLeave="Button_MouseLeave" MouseEnter="Button_MouseEnter"/>
+        <Button x:Name="btnCheckCaptcha" Grid.Row="2" Grid.Column="1" Width="130" Height="50" Content="Проерить Captcha" IsEnabled="False" Style="{StaticResource ButtonNoSizeIsNotEnabled}" Click="btnCheckCaptcha_Click" MouseLeave="Button_MouseLeave" MouseEnter="Button_MouseEnter"/>
     </Grid>
+
+    <Window.Resources>
+        <Style TargetType="Border">
+            <Style.Setters>
+                <Setter Property="BorderBrush" Value="#445c93"/>
+                <Setter Property="BorderThickness" Value="1.5"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
 </Window>

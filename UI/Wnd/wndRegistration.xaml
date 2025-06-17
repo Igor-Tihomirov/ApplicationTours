@@ -43,22 +43,22 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Column="0" Grid.Row="0" Text="Логин:" Margin="0 0 10 0"/>
-                        <cmcl:clPlaceholderTextBox x:Name="pltxbxLogin" Grid.Column="1" Grid.Row="0" MinWidth="250" Height="40" Placeholder="Придумайте себе логин..." Radius="10" Margin="4 8 0 8" MaxLength="25"/>
+                        <cmcl:clPlaceholderTextBox x:Name="pltxbxLogin" Text="{Binding Login}" Grid.Column="1" Grid.Row="0" MinWidth="250" Height="40" Placeholder="Придумайте себе логин..." Radius="10" Margin="4 8 0 8" MaxLength="25" TextChanged="ActivatingSendButton"/>
 
                         <TextBlock Grid.Column="0" Grid.Row="1" Text="Пароль:" Margin="0 0 10 0"/>
-                        <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="1" MinWidth="250" Height="40" Placeholder="Придумайте пароль..." Radius="10" Margin="4 8 0 8" MaxLength="25"/>
+                        <cmcl:clPlaceholderTextBox x:Name="pltxbxPassword" Grid.Column="1" Grid.Row="1" MinWidth="250" Height="40" Placeholder="Придумайте пароль..." Radius="10" Margin="4 8 0 8" MaxLength="25" TextChanged="ActivatingSendButton"/>
 
                         <TextBlock Grid.Column="0" Grid.Row="2" Text="Повторите пароль:" Margin="0 0 10 0"/>
-                        <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="2" MinWidth="250" Height="40" Placeholder="Повторно введите пароль..." Radius="10" Margin="4 8 0 8" MaxLength="25"/>
+                        <cmcl:clPlaceholderTextBox x:Name="pltxbxPasswordAgain" Grid.Column="1" Grid.Row="2" MinWidth="250" Height="40" Placeholder="Повторно введите пароль..." Radius="10" Margin="4 8 0 8" MaxLength="25" TextChanged="ActivatingSendButton"/>
 
-                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Номер телефона" Margin="0 0 10 0"/>
-                        <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="3" Height="40" Placeholder="Введите номер телефона..." Radius="10" Margin="4 8 0 8" />
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Номер телефона:" Margin="0 0 10 0"/>
+                        <cmcl:clPlaceholderTextBox x:Name="pltxbxPhone" Text="{Binding Phone}" Grid.Column="1" Grid.Row="3" Height="40" Placeholder="Введите номер телефона..." Radius="10" Margin="4 8 0 8" TextChanged="ActivatingSendButton"/>
 
-                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Имя пользователя" Margin="0 0 10 0"/>
-                        <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="4" Height="40" Placeholder="Придуайте имя, по которому к вам можно будет обращаться..." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Имя пользователя:" Margin="0 0 10 0"/>
+                        <cmcl:clPlaceholderTextBox x:Name="pltxbxUserName" Text="{Binding UserName}" Grid.Column="1" Grid.Row="4" Height="40" Placeholder="Придуайте имя, по которому к вам можно будет обращаться..." Radius="10" Margin="4 8 0 8" MaxLength="30" TextChanged="ActivatingSendButton"/>
                     </Grid>
                 </Border>
-                <Expander Header="Раскрыть для ввода" IsExpanded="False" Height="auto" Margin="25 15 25 15">
+                <Expander Header="Дополнительно" IsExpanded="False" Height="auto" Margin="25 15 25 15">
                     <Border Padding="15" CornerRadius="10" Margin="0 10 0 10">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -71,19 +71,19 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Фамилия" Margin="0 0 10 0"/>
-                            <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="0" Height="40" Placeholder="Введите фамилию..." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Фамилия:" Margin="0 0 10 0"/>
+                            <cmcl:clPlaceholderTextBox x:Name="pltxbxSurname" Text="{Binding Surname}" Grid.Column="1" Grid.Row="0" Height="40" Placeholder="Введите фамилию..." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
 
-                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Имя" Margin="0 0 10 0"/>
-                            <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="1" Height="40" Placeholder="Введите имя.." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Имя:" Margin="0 0 10 0"/>
+                            <cmcl:clPlaceholderTextBox x:Name="pltxbxName" Text="{Binding Name}" Grid.Column="1" Grid.Row="1" Height="40" Placeholder="Введите имя.." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
 
-                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Отчество" Margin="0 0 10 0"/>
-                            <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="2" Height="40" Placeholder="Введите отчетсво..." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Отчество:" Margin="0 0 10 0"/>
+                            <cmcl:clPlaceholderTextBox x:Name="pltxbxPatronymic" Text="{Binding Patronymic}" Grid.Column="1" Grid.Row="2" Height="40" Placeholder="Введите отчетсво..." Radius="10" Margin="4 8 0 8" MaxLength="30"/>
 
-                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Почта:" Margin="0 0 10 0"/>
-                            <cmcl:clPlaceholderTextBox Grid.Column="1" Grid.Row="3" MinWidth="250" Height="40" Placeholder="Введите адрес эл.почты..." Radius="10" Margin="4 8 0 8" MaxLength="40"/>
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text=" Эл.почта:" Margin="0 0 10 0"/>
+                            <cmcl:clPlaceholderTextBox x:Name="pltxbxEmail" Text="{Binding Email}" Grid.Column="1" Grid.Row="3" MinWidth="250" Height="40" Placeholder="Введите адрес эл.почты..." Radius="10" Margin="4 8 0 8" MaxLength="40"/>
 
-                            
+
                         </Grid>
                     </Border>
                 </Expander>
@@ -95,12 +95,13 @@
         </Grid>
     </ScrollViewer>
 
-
-
-
-
-
     <Window.Resources>
+        <Style TargetType="Expander">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style.Setters>
+        </Style>
         <Style TargetType="Border">
             <Style.Setters>
                 <Setter Property="BorderBrush" Value="#445c93"/>
@@ -110,12 +111,9 @@
         <Style TargetType="TextBlock">
             <Style.Setters>
                 <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="Arial"/>
-                <Setter Property="FontSize" Value="18"/>
                 <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                <Setter Property="FontSize" Value="18"/>
             </Style.Setters>
         </Style>
     </Window.Resources>
-
-    
 </Window>

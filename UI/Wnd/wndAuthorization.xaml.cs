@@ -23,7 +23,7 @@ namespace Приложение_Турагенства.UI.Wnd
     /// </summary>
     public partial class wndAuthorization : Window
     {
-        private int countError = 0;
+        public int countError = 0;
         private TimeSpan timeBlockStart;
         public wndAuthorization()
         {
@@ -32,7 +32,6 @@ namespace Приложение_Турагенства.UI.Wnd
 
         private void btnAuthorization_Click(object sender, RoutedEventArgs e)
         {            
-
             if (countError >= 3)
             {
                 TimeSpan co = timeBlockStart.Add(TimeSpan.FromSeconds(15)) - DateTime.Now.TimeOfDay;
@@ -115,8 +114,9 @@ namespace Приложение_Турагенства.UI.Wnd
                     MessageBox.Show($"Блокировка снята", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 };
 
-                MessageBox.Show("Попробуйте войти через 15 секунд", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show("Попробуйте войти через 15 секунд", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 wndCaptcha captcha = new wndCaptcha();
+                captcha.TransitionWindow = "authorization";
                 captcha.Show();
                 this.Close();
             }
@@ -265,7 +265,7 @@ namespace Приложение_Турагенства.UI.Wnd
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            wndRegistration registration = new wndRegistration();
+            wndRegistration registration = new wndRegistration(null);
             registration.Show();
             this.Close();
         }

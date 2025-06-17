@@ -23,7 +23,7 @@ namespace Приложение_Турагенства.Data
 
         public static ToursBase_49_22Entities GetContext()
         {
-            if(_context == null)
+            if (_context == null)
             {
                 _context = new ToursBase_49_22Entities();
             }
@@ -35,7 +35,7 @@ namespace Приложение_Турагенства.Data
             else
             {
                 return _context;
-            }          
+            }
         }
 
         public static void DisposeContext()
@@ -43,8 +43,8 @@ namespace Приложение_Турагенства.Data
             if (_context != null)
             {
                 _context.Dispose();
-                _context = null;                
-            }            
+                _context = null;
+            }
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

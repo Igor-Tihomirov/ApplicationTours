@@ -33,7 +33,6 @@ namespace Приложение_Турагенства.UI.Wnd
             // Завершаем работу контекста базы данных
             ToursBase_49_22Entities.DisposeContext();
 
-            //что то новое
         }
 
         public wndTours()

@@ -47,7 +47,7 @@
             <Label x:Name="lblLogin" 
                    Grid.Row="0" 
                    Grid.Column="0" 
-                   Content="Логин" 
+                   Content="Логин:" 
                    Margin="25,10,0,10" 
                    Style="{StaticResource LabelBasic}"/>
             <TextBox x:Name="txtbxLogin" 
@@ -61,7 +61,7 @@
             <Label x:Name="lblPassword" 
                    Grid.Row="1" 
                    Grid.Column="0" 
-                   Content="Пароль" 
+                   Content="Пароль:" 
                    Margin="25,10,0,10" 
                    Style="{StaticResource LabelBasic}"/>
             <PasswordBox x:Name="psbPassword" 
